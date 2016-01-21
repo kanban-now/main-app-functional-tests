@@ -11,7 +11,7 @@ class FirstSpec extends Specification {
         int x = 3;
 
         then:
-        x == 3
+        x == 4
     }
 
 }

@@ -1,9 +1,9 @@
 build
 .gradle
-.idea
-*.iml
+*.log
+.DS_Store
 *.ipr
+*.iml
 *.iws
-target
-keystore.p12
-manifest.yml
+out
+.idea

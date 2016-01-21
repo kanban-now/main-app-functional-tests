@@ -1,1 +1,0 @@
-# main-app-functional-tests

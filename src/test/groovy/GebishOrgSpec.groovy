@@ -12,7 +12,7 @@ class GebishOrgSpec extends GebReportingSpec {
         }
 
         then: //first link is for the current manual
-        manualsMenu.links[0].text().endsWith("- CURRENTx")
+        manualsMenu.links[0].text().endsWith("- CURRENT")
 
         when:
         manualsMenu.links[0].click()

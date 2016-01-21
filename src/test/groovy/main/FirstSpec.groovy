@@ -8,10 +8,10 @@ class FirstSpec extends Specification {
 
     def "aTest"() {
         when:
-        int x= 3;
+        int x = 3;
 
         then:
-        x == 3
+        x == 4
     }
 
 }

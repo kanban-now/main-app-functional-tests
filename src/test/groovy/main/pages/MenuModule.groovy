@@ -1,3 +1,5 @@
+package main.pages
+
 import geb.Module
 
 class MenuModule extends Module {

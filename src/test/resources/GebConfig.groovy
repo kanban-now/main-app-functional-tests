@@ -35,4 +35,15 @@ environments {
 
 // To run the tests with all browsers just run “./gradlew test”
 
-baseUrl = "http://gebish.org"
+baseUrl = readTestProperty('geb_base_url')
+
+reportsDir = "build/geb-reports"
+
+private static String readTestProperty(String key) {
+	String result = System.getProperty(key)
+	if(result == null) {
+		result = System.getenv(key);
+	}
+
+	return result
+}

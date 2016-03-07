@@ -10,6 +10,7 @@ class KanbanNowHomePage extends Page {
         whoAreYouMessage { $("#who-are-you-header") }
         helloMessage { $("h1", text: startsWith("Hello, ")) }
         logoutButton { $("a", text: 'Logout') }
+        archivedCardsButton { $("a", id: 'archivedCardsButton')}
     }
 
 
@@ -17,6 +18,8 @@ class KanbanNowHomePage extends Page {
         logoutButton.click(KanbanNowHomePage)
     }
 
-
-
+    ArchivedCardsListPage navigateToArchivedCardsPage() {
+        archivedCardsButton.click(ArchivedCardsListPage)
+        return browser.page
+    }
 }

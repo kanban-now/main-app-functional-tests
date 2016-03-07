@@ -11,8 +11,6 @@ class LoginPage extends Page {
         userNameOrEmailInput { $("input", name: "login") }
         passwordInput { $("input", name: "password") }
         loginButton { $("button", text: 'Login') }
-
-
     }
 
     KanbanNowHomePage login(String username, String password) {

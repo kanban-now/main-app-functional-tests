@@ -1,6 +1,7 @@
 package main.spec
 
 import geb.spock.GebReportingSpec
+import main.pages.ArchivedCardsListPage
 import main.pages.KanbanNowHomePage
 import main.pages.LoginPage
 
@@ -13,13 +14,20 @@ class HomePageSpec extends GebReportingSpec {
     def "can get to KanbanNow home page"() {
         when:
         LoginPage loginPage =   to LoginPage
-
         KanbanNowHomePage homePage = loginPage.login(testUser1_id, testUser1_password )
 
         then:
         homePage.helloMessage.text().startsWith("Hello, ")
 
         when:
+        ArchivedCardsListPage archivedCardsListPage = homePage.navigateToArchivedCardsPage()
+
+
+        then:
+        archivedCardsListPage.archivedCards.size() == 1
+
+        when:
+        browser.driver.navigate().back()
         homePage.logout()
 
         then:

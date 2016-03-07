@@ -41,6 +41,7 @@ MainSpec.testUser1_id = readTestProperty('testuser1_id')
 MainSpec.testUser1_password = readTestProperty('testuser1_password')
 
 
+MainSpec.archiveCardServiceUrl = readTestProperty('archiveCardServiceUrl')
 MainSpec.archiveCardServiceUserName = readTestProperty('archiveCardServiceUserName')
 MainSpec.archiveCardServicePassword = readTestProperty('archiveCardServicePassword')
 

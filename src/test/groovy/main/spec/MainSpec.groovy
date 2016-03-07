@@ -16,6 +16,7 @@ class MainSpec extends GebReportingSpec {
     public static String testUser1_id
     public static String testUser1_password
 
+    public static String archiveCardServiceUrl
     public static String archiveCardServiceUserName
     public static String archiveCardServicePassword
 
@@ -28,7 +29,7 @@ class MainSpec extends GebReportingSpec {
                 .decoder(new GsonDecoder())
                 .encoder(new GsonEncoder())
                 .requestInterceptor(new BasicAuthRequestInterceptor(archiveCardServiceUserName, archiveCardServicePassword))
-                .target(ArchivedCardClient.class, "http://localhost:9000");
+                .target(ArchivedCardClient.class, archiveCardServiceUrl);
 
 
         String userId = "userId1"

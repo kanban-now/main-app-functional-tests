@@ -5,7 +5,7 @@
 */
 
 
-import main.spec.HomePageSpec
+import main.spec.MainSpec
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.phantomjs.PhantomJSDriver
@@ -37,8 +37,12 @@ environments {
 // To run the tests with all browsers just run “./gradlew test”
 
 baseUrl = readTestProperty('geb_base_url')
-HomePageSpec.testUser1_id = readTestProperty('testuser1_id')
-HomePageSpec.testUser1_password = readTestProperty('testuser1_password')
+MainSpec.testUser1_id = readTestProperty('testuser1_id')
+MainSpec.testUser1_password = readTestProperty('testuser1_password')
+
+
+MainSpec.archiveCardServiceUserName = readTestProperty('archiveCardServiceUserName')
+MainSpec.archiveCardServicePassword = readTestProperty('archiveCardServicePassword')
 
 
 

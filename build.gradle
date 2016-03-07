@@ -40,6 +40,11 @@ dependencies {
         // phantomjs driver pulls in a different selenium version
         transitive = false
     }
+
+    testCompile 'com.netflix.feign:feign-core:8.15.0'
+    testCompile 'com.netflix.feign:feign-gson:8.15.0'
+
+
 }
 
 drivers.each { driver ->

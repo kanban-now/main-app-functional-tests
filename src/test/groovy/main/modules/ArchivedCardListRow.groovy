@@ -8,7 +8,9 @@ class ArchivedCardListRow extends Module {
     static content = {
         cell { $("td", it) }
         cardText { cell(0).text() }
-        archivedDate { cell(1).text() }
+        boardId { cell(1).text() }
+        archivedDate { cell(2).text() }
+
     }
 }
 

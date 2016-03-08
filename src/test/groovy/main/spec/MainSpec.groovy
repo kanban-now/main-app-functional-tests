@@ -64,10 +64,12 @@ class MainSpec extends GebReportingSpec {
         assert archivedCardsListPage.archivedCards[0].cardText ==  newCard1.text
         Date card1ArchiveDate = convertISO8601StringToTimestamp(archivedCardsListPage.archivedCards[0].archivedDate)
         assert card1ArchiveDate.after(timeAtStartOfTest)
+        assert archivedCardsListPage.archivedCards[0].boardId == (newCard1.boardId as String)
 
         assert archivedCardsListPage.archivedCards[1].cardText ==  newCard2.text
         Date card2ArchiveDate = convertISO8601StringToTimestamp(archivedCardsListPage.archivedCards[1].archivedDate)
         assert card2ArchiveDate.after(timeAtStartOfTest)
+        assert archivedCardsListPage.archivedCards[1].boardId == (newCard2.boardId as String)
 
         when:
         browser.driver.navigate().back()

@@ -1,7 +1,6 @@
 package main.pages
 
 import geb.Page
-import org.openqa.selenium.JavascriptExecutor
 
 class KanbanNowHomePage extends Page {
 
@@ -21,20 +20,11 @@ class KanbanNowHomePage extends Page {
     }
 
     ArchivedCardsListPage navigateToArchivedCardsPage() {
-        JavascriptExecutor jsDriver = (JavascriptExecutor)browser.driver
         archivedCardsButton.click(ArchivedCardsListPage)
         waitFor { ajaxCompletedDiv }
         return browser.page
     }
 
-
-    private void sleep(long millisToSleep) {
-        try {
-            Thread.sleep(millisToSleep);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 
 }

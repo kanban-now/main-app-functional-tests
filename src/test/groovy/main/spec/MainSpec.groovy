@@ -54,7 +54,6 @@ class MainSpec extends GebReportingSpec {
 
 
         then:
-        sleep(1000)
         archivedCardsListPage.archivedCards.size() == 2
 
         when:

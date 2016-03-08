@@ -39,6 +39,7 @@ environments {
 baseUrl = readTestProperty('geb_base_url')
 MainSpec.testUser1_id = readTestProperty('testuser1_id')
 MainSpec.testUser1_password = readTestProperty('testuser1_password')
+MainSpec.testUser1_internalId = readTestProperty('testUser1_internalId')
 
 
 MainSpec.archiveCardServiceUrl = readTestProperty('archiveCardServiceUrl')

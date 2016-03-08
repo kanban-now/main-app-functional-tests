@@ -15,6 +15,7 @@ class MainSpec extends GebReportingSpec {
 
     public static String testUser1_id
     public static String testUser1_password
+    public static String testUser1_internalId
 
     public static String archiveCardServiceUrl
     public static String archiveCardServiceUserName
@@ -32,22 +33,15 @@ class MainSpec extends GebReportingSpec {
                 .target(ArchivedCardClient.class, archiveCardServiceUrl);
 
 
-        String userId = "userId1"
         Card newCard1 = new Card()
         newCard1.setText("Test text 1")
         newCard1.setBoardId(444)
-        newCard1 = archivedCardClient.createCard(userId, newCard1)
+        newCard1 = archivedCardClient.createCard(testUser1_internalId, newCard1)
 
         Card newCard2 = new Card()
         newCard2.setText("Test text 2")
         newCard2.setBoardId(445)
-        newCard2 = archivedCardClient.createCard(userId, newCard2)
-
-//        // Fetch and print a list of the contributors to this library.
-//        List<Card> cards = archivedCardClient.cards(userId);
-////        for (Contributor contributor : contributors) {
-////            System.out.println(contributor.login + " (" + contributor.contributions + ")");
-////        }
+        newCard2 = archivedCardClient.createCard(testUser1_internalId, newCard2)
 
         LoginPage loginPage = to LoginPage
         KanbanNowHomePage homePage = loginPage.login(testUser1_id, testUser1_password )
@@ -60,7 +54,8 @@ class MainSpec extends GebReportingSpec {
 
 
         then:
-        archivedCardsListPage.archivedCards.size() == 1
+        sleep(1000)
+        archivedCardsListPage.archivedCards.size() == 2
 
         when:
         browser.driver.navigate().back()
@@ -70,8 +65,8 @@ class MainSpec extends GebReportingSpec {
         homePage.whoAreYouMessage.text() == "Who are you?"
 
         cleanup:
-        archivedCardClient.deleteCard(userId,newCard1.id)
-        archivedCardClient.deleteCard(userId,newCard2.id)
+        archivedCardClient.deleteCard(testUser1_internalId,newCard1.id)
+        archivedCardClient.deleteCard(testUser1_internalId,newCard2.id)
 
 
     }

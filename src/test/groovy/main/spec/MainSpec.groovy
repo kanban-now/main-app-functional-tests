@@ -49,7 +49,7 @@ class MainSpec extends GebReportingSpec {
 ////            System.out.println(contributor.login + " (" + contributor.contributions + ")");
 ////        }
 
-        LoginPage loginPage =   to LoginPage
+        LoginPage loginPage = to LoginPage
         KanbanNowHomePage homePage = loginPage.login(testUser1_id, testUser1_password )
 
         then:

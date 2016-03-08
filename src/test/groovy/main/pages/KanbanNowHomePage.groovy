@@ -1,6 +1,8 @@
 package main.pages
 
 import geb.Page
+import main.WaitForAngularRequestsToFinish
+
 
 class KanbanNowHomePage extends Page {
 
@@ -14,17 +16,14 @@ class KanbanNowHomePage extends Page {
         ajaxCompletedDiv { $("div", id: 'ajaxCompleted')}
     }
 
-
     void logout() {
         logoutButton.click(KanbanNowHomePage)
     }
 
     ArchivedCardsListPage navigateToArchivedCardsPage() {
         archivedCardsButton.click(ArchivedCardsListPage)
-        waitFor { ajaxCompletedDiv }
+        WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish(browser.driver)
         return browser.page
     }
-
-
 
 }

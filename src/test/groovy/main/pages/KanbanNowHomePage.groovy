@@ -13,7 +13,6 @@ class KanbanNowHomePage extends Page {
         helloMessage { $("h1", text: startsWith("Hello, ")) }
         logoutButton { $("a", text: 'Logout') }
         archivedCardsButton { $("a", id: 'archivedCardsButton')}
-        ajaxCompletedDiv { $("div", id: 'ajaxCompleted')}
     }
 
     void logout() {

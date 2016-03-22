@@ -37,9 +37,9 @@ environments {
 // To run the tests with all browsers just run “./gradlew test”
 
 baseUrl = readTestProperty('geb_base_url')
-MainSpec.testUser1_id = readTestProperty('testuser1_id')
-MainSpec.testUser1_password = readTestProperty('testuser1_password')
-MainSpec.testUser1_internalId = readTestProperty('testUser1_internalId')
+MainSpec.testUser_id = readTestProperty('testuser_id')
+MainSpec.testUser_password = readTestProperty('testuser_password')
+MainSpec.testUser_internalId = readTestProperty('testUser_internalId')
 
 
 MainSpec.archiveCardServiceUrl = readTestProperty('archiveCardServiceUrl')

@@ -80,7 +80,7 @@ class MainSpec extends GebReportingSpec {
 
         cleanup:
         archivedCardClient.deleteCard(testUser1_internalId,newCard1.id)
-        archivedCardClient.deleteCard(testUser1_internalId,newCard2.id)
+        archivedCardClient.deleteCard(testUser1_internalId,newCard1.id)
 
 
     }
